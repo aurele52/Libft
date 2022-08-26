@@ -6,7 +6,7 @@
 /*   By: audreyer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 20:04:18 by audreyer          #+#    #+#             */
-/*   Updated: 2022/07/10 01:04:26 by audreyer         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:54:09 by audreyer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -36,6 +36,7 @@ typedef struct s_list
 	struct s_pos	*pos;
 }	t_list;
 
+int	ft_strcmp(const char *s1, const char *s2);
 int		**ft_splitint(char *c, t_pos *free);
 void	ft_exit(t_pos *garbage, char *str);
 int		ft_abs(int a);

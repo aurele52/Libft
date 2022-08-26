@@ -6,7 +6,7 @@
 #    By: audreyer <audreyer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/10 01:52:00 by audreyer          #+#    #+#              #
-#    Updated: 2022/07/10 17:34:25 by audreyer         ###   ########.fr        #
+#    Updated: 2022/08/08 15:54:43 by audreyer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ SRC =	ft_atoi.c \
 		ft_strjoin.c \
 		ft_strlcat.c \
 		ft_strlcpy.c \
+		ft_strcmp.c \
 		ft_strlen.c \
 		ft_strmapi.c \
 		ft_strncmp.c \
