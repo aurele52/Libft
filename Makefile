@@ -18,7 +18,13 @@ FLAG = -Wall -Werror -Wextra -g3
 
 RM = rm -rf
 
-SRC =	ft_atoi.c \
+SRC_DIR = src/
+
+OBJ_DIR = src/
+
+SRC = $(addprefix $(SRC_DIR),$(FILE))
+
+FILE =	ft_atoi.c \
 		ft_splitint.c \
 		ft_exit.c \
 		ft_abs.c \

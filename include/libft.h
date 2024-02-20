@@ -36,12 +36,10 @@ typedef struct s_list
 	struct s_pos	*pos;
 }	t_list;
 
-int	ft_strcmp(const char *s1, const char *s2);
 int		**ft_splitint(char *c, t_pos *free);
 void	ft_exit(t_pos *garbage, char *str);
 int		ft_abs(int a);
 char	*get_next_line(int fd, t_pos *free);
-int		ft_voidtoint(int *i);
 void	*ft_mallocint(int i, t_pos *free);
 void	*ft_malloc(int size, t_pos *free);
 t_list	*ft_lstmin(t_pos *pos);
