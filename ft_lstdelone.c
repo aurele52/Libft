@@ -10,20 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	ft_lstdelone(t_list *list, int freee)
-{
+void	ft_lstdelone(t_list *list, int freee) {
 	if (freee == 1)
 		free(list->content);
 	*list->pos->size = *list->pos->size - 1;
-	if (list->pos->end == list->pos->start)
-	{
+	if (list->pos->end == list->pos->start) {
 		list->pos->end = 0;
 		list->pos->start = 0;
 	}
-	else
-	{
+	else {
 		if (list->pos->end == list)
 			list->pos->end = list->back;
 		if (list->pos->start == list)

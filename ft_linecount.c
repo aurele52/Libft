@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "include/libft.h"
 
-int	ft_tablinecount(void **tab)
-{
+int	ft_tablinecount(void **tab) {
 	int	a;
 
 	a = 0;

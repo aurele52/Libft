@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-char	*ft_strjoin(char *s1, char *s2, t_pos *free)
-{
+char	*ft_strjoin(char *s1, char *s2, t_pos *free) {
 	char	*str;
 	int		i;
 	int		j;

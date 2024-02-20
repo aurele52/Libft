@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len, t_pos *free)
-{
+char	*ft_substr(char const *s, unsigned int start, size_t len, t_pos *free) {
 	char	*str;
 
 	if (start > ft_strlen(s))
@@ -25,8 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len, t_pos *free)
 		return (0);
 	s = start + s;
 	str[len] = 0;
-	while (len > 0)
-	{
+	while (len > 0) {
 		str[len - 1] = s[len - 1];
 		len--;
 	}

@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-static char	*ft_remp(char *str, int n, int i)
-{
+static char	*ft_remp(char *str, int n, int i) {
 	str[i + 1] = 0;
 	while (n > 0)
 	{
@@ -24,66 +23,32 @@ static char	*ft_remp(char *str, int n, int i)
 	return (str);
 }
 
-static char	*ft_zero(int i)
-{
-	char	*str;
-
-	(void)i;
-	str = malloc(sizeof(char) * 2);
-	str[0] = '0';
-	str[1] = 0;
-	return (str);
-}
-
-static char	*ft_crea(int n, int i, int moin)
-{
+static char	*ft_crea(int n, int i, int negative) {
 	char	*str;
 
 	if (n == 0)
-		return (ft_zero(1));
-	str = malloc(sizeof(char) * (i + moin + 1));
+		return (ft_strdup("0", 0));
+	str = malloc(sizeof(char) * (i + negative + 1));
 	if (!(str))
 		return (0);
-	if (moin == 1)
+	if (negative == 1)
 		str[0] = '-';
-	return (ft_remp(str, n, i + moin - 1));
+	return (ft_remp(str, n, i + negative - 1));
 }
 
-static char	*ft_min(int i)
-{
-	char	*str;
-
-	(void)i;
-	str = malloc(sizeof(char) * 12);
-	str[0] = '-';
-	str[1] = '2';
-	str[2] = '1';
-	str[3] = '4';
-	str[4] = '7';
-	str[5] = '4';
-	str[6] = '8';
-	str[7] = '3';
-	str[8] = '6';
-	str[9] = '4';
-	str[10] = '8';
-	str[11] = 0;
-	return (str);
-}
-
-char	*ft_itoa(int n)
-{
+char	*ft_itoa(int n) {
 	int	nb;
 	int	i;
-	int	moin;
+	int negative;
 
 	i = 0;
-	moin = 0;
+	negative = 0;
 	if (n == -2147483648)
-		return (ft_min(1));
+		return (ft_strdup("-2147483648", 0));
 	if (n < 0)
 	{
 		n = -n;
-		moin = 1;
+		negative = 1;
 	}
 	nb = n;
 	while (nb > 0)
@@ -91,5 +56,5 @@ char	*ft_itoa(int n)
 		nb = nb / 10;
 		i++;
 	}
-	return (ft_crea(n, i, moin));
+	return (ft_crea(n, i, negative));
 }

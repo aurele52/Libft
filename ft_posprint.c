@@ -10,18 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	ft_posprint(t_pos *pos)
-{
+void	ft_posprint(t_pos *pos) {
 	t_list	*list;
 	int		*mem;
 
-	if (pos->end != 0 && pos->start != 0)
-	{
+	if (pos->end != 0 && pos->start != 0) {
 		list = pos->start;
-		while (list != list->pos->end)
-		{
+		while (list != list->pos->end) {
 			mem = list->content;
 			ft_putnbr(*mem);
 			write(1, "\n", 1);

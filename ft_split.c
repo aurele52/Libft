@@ -10,18 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "include/libft.h"
 
-static int	ft_wcount(char const *s, char c)
-{
+static int	ft_wcount(char const *s, char c) {
 	int	i;
 	int	wcount;
 
 	i = 0;
 	wcount = 0;
-	while (s[i])
-	{
+	while (s[i]) {
 		if ((i == 0 && s[i] != c) || (s[i] != c && s[i - 1] == c))
 			wcount++;
 		i++;
@@ -29,8 +26,7 @@ static int	ft_wcount(char const *s, char c)
 	return (wcount);
 }
 
-static int	ft_wlen(char const *s, char c)
-{
+static int	ft_wlen(char const *s, char c) {
 	int	i;
 
 	i = 0;
@@ -39,8 +35,7 @@ static int	ft_wlen(char const *s, char c)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c, t_pos *free)
-{
+char	**ft_split(char const *s, char c, t_pos *free) {
 	int		a;
 	char	**str;
 
@@ -51,12 +46,10 @@ char	**ft_split(char const *s, char c, t_pos *free)
 	if (!str)
 		return (0);
 	str[ft_wcount(s, c)] = 0;
-	while (*s != 0)
-	{
+	while (*s != 0) {
 		while (*s == c)
 			s++;
-		if (*s)
-		{
+		if (*s) {
 			str[a] = ft_substr(s, 0, (ft_wlen(s, c)), free);
 			if (!str[a])
 				return (0);

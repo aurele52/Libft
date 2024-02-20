@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "include/libft.h"
 
-static int	ft_linecount(char const **s)
-{
+static int	ft_linecount(char const **s) {
 	int	i;
 
 	i = 0;
@@ -23,15 +21,13 @@ static int	ft_linecount(char const **s)
 	return (i);
 }
 
-static int	ft_spacenbr(char const *s)
-{
+static int	ft_spacenbr(char const *s) {
 	int	i;
 	int	nbr;
 
 	nbr = 0;
 	i = 0;
-	while (s[i] != 0)
-	{
+	while (s[i] != 0) {
 		if ((s[i] <= '9' && s[i] >= '0')
 			&& (i == 0 || (s[i - 1] < '0' || s[i - 1] > '9')))
 			nbr++;
@@ -40,8 +36,7 @@ static int	ft_spacenbr(char const *s)
 	return (nbr);
 }
 
-static int	*ft_makeline(char const *s, t_pos *free)
-{
+static int	*ft_makeline(char const *s, t_pos *free) {
 	int	i;
 	int	a;
 	int	*str;
@@ -53,8 +48,7 @@ static int	*ft_makeline(char const *s, t_pos *free)
 	str = ft_malloc((sizeof(int) * (spacenbr + 1)), free);
 	if (!str)
 		return (0);
-	while (s[i] != 0)
-	{
+	while (s[i] != 0) {
 		str[a++] = ft_atoi(&s[i]);
 		while (s[i] != ' ' && s[i] != 0)
 			i++;
@@ -64,21 +58,18 @@ static int	*ft_makeline(char const *s, t_pos *free)
 	return (str);
 }
 
-void	ft_print(char	**tab)
-{
+void	ft_print(char	**tab) {
 	int	i;
 
 	i = 0;
-	while (tab[i])
-	{
+	while (tab[i]) {
 		write(1, &tab[i], ft_strlen(tab[i]));
 		write(1, "\n", 1);
 		i++;
 	}
 }
 
-int	**ft_splitint(char *s, t_pos *free)
-{
+int	**ft_splitint(char *s, t_pos *free) {
 	char	**split;
 	int		**str;
 	int		line;
@@ -93,8 +84,7 @@ int	**ft_splitint(char *s, t_pos *free)
 	if (!str)
 		return (0);
 	str[line] = 0;
-	while (i != line)
-	{
+	while (i != line) {
 		str[i] = ft_makeline(split[i], free);
 		i++;
 	}

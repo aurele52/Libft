@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-t_list	*ft_lstmin(t_pos *pos)
-{
+t_list	*ft_lstmin(t_pos *pos) {
 	t_list	*min;
 	t_list	*list;
 
 	min = pos->start;
 	list = pos->start->next;
-	while (list != pos->start)
-	{
+	while (list != pos->start) {
 		if (ft_voidtoint(min->content) > ft_voidtoint(list->content))
 			min = list;
 		list = list->next;

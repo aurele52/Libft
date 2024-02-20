@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-t_pos	*ft_setpos(t_pos *free)
-{
+t_pos	*ft_setpos(t_pos *free) {
 	t_pos	*pos;
 	int		*size;
 
@@ -21,8 +20,7 @@ t_pos	*ft_setpos(t_pos *free)
 	if (size == 0)
 		return (0);
 	pos = ft_malloc(sizeof(*pos), free);
-	if (pos == 0)
-	{
+	if (pos == 0) {
 		if (free == 0)
 			ft_freevaria(1, size);
 		return (0);

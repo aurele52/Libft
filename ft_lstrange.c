@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-int	ft_lstrange(t_list *list)
-{
+int	ft_lstrange(t_list *list) {
 	t_list	*mem;
 	int		nbr;
 
 	nbr = 0;
 	mem = list->pos->start;
-	while (list != mem)
-	{
+	while (list != mem) {
 		nbr++;
 		mem = mem->next;
 	}

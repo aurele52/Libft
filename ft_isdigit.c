@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int character)
-{
+int	ft_isdigit(int character) {
 	if (character <= '9' && character >= '0')
 		return (1);
 	return (0);

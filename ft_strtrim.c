@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-static int	ft_isset(char s, const char *set)
-{
+static int	ft_isset(char s, const char *set) {
 	int	i;
 
 	i = 0;
-	while (set[i])
-	{
+	while (set[i]) {
 		if (set[i] == s)
 			return (1);
 		i++;
@@ -26,8 +24,7 @@ static int	ft_isset(char s, const char *set)
 	return (0);
 }
 
-static char	*ft_useless(int len, char const *s1)
-{
+static char	*ft_useless(int len, char const *s1) {
 	char	*str;
 	int		i;
 
@@ -41,8 +38,7 @@ static char	*ft_useless(int len, char const *s1)
 	return (str);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
-{
+char	*ft_strtrim(char const *s1, char const *set) {
 	int		len;
 
 	while (ft_isset(*s1, set) == 1 && *s1)

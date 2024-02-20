@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-t_list	*ft_lstmax(t_pos *pos)
-{
+t_list	*ft_lstmax(t_pos *pos) {
 	t_list	*max;
 	t_list	*list;
 
 	max = pos->start;
 	list = pos->start->next;
-	while (list != pos->start)
-	{
+	while (list != pos->start) {
 		if (ft_voidtoint(max->content) < ft_voidtoint(list->content))
 			max = list;
 		list = list->next;

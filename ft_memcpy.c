@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
+void	*ft_memcpy(void *dest, const void *src, size_t n) {
 	unsigned char	*source;
 	unsigned char	*destination;
 

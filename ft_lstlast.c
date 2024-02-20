@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
-{
-	while (lst)
-	{
+t_list	*ft_lstlast(t_list *lst) {
+	while (lst) {
 		if (lst->next == 0)
 			return (lst);
 		lst = lst->next;

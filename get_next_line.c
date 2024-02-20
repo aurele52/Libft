@@ -10,31 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
 int	ft_strlengnl(char *str);
 int	ft_atoignl(const char *str);
 
-char	*ft_itoagnl(int n, char *str, char *str2)
-{
+char	*ft_itoagnl(int n, char *str, char *str2) {
 	int	nb;
 	int	i;
 
-	if (n == 0)
-	{
+	if (n == 0) {
 		str[0] = '0';
 		return (str2);
 	}
 	i = 0;
 	nb = n;
-	while (nb > 0)
-	{
+	while (nb > 0) {
 		nb = nb / 10;
 		i++;
 	}
 	str[i--] = 0;
-	while (n > 0)
-	{
+	while (n > 0) {
 		str[i] = n % 10 + '0';
 		n = n / 10;
 		i--;
@@ -42,16 +38,14 @@ char	*ft_itoagnl(int n, char *str, char *str2)
 	return (str2);
 }
 
-char	*ft_return(char *str, char *buffer)
-{	
+char	*ft_return(char *str, char *buffer) {	
 	buffer[0] = -1;
 	if (str[0] == 0)
 		return (0);
 	return (str);
 }
 
-void	ft_read(char *buffer, int fd)
-{
+void	ft_read(char *buffer, int fd) {
 	int	ret;
 
 	ret = read(fd, buffer, BUFFER_SIZE);
@@ -61,17 +55,14 @@ void	ft_read(char *buffer, int fd)
 		buffer[ret] = 0;
 }
 
-char	*ft_gnl2(char *str, char *buffer, int fd, t_pos *free)
-{
+char	*ft_gnl2(char *str, char *buffer, int fd, t_pos *free) {
 	int	mem;
 	int	i;
 
 	i = 0;
-	while (1)
-	{
+	while (1) {
 		i = ft_atoignl(buffer) + 1;
-		if (buffer[0] == 0 || buffer[i] == 0)
-		{
+		if (buffer[0] == 0 || buffer[i] == 0) {
 			i = 0;
 			ft_read(buffer, fd);
 		}
@@ -90,8 +81,7 @@ char	*ft_gnl2(char *str, char *buffer, int fd, t_pos *free)
 	return (0);
 }
 
-char	*get_next_line(int fd, t_pos *free)
-{
+char	*get_next_line(int fd, t_pos *free) {
 	static char	buffer[BUFFER_SIZE + 1];
 	char		*str;
 

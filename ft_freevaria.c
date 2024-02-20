@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	*ft_freevaria(int i, ...)
-{
+void	*ft_freevaria(int i, ...) {
 	va_list	param;
 	void	*p;
 
 	va_start(param, i);
-	while (i > 0)
-	{
+	while (i > 0) {
 		p = va_arg(param, void *);
 		free(p);
 		i--;

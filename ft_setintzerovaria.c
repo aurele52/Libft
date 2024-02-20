@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	ft_setintzerovaria(int i, ...)
-{
+void	ft_setintzerovaria(int i, ...) {
 	va_list	param;
 	int		*p;
 
 	va_start(param, i);
-	while (i > 0)
-	{
+	while (i > 0) {
 		p = va_arg(param, int *);
 		*p = 0;
 		i--;

@@ -10,14 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	ft_posclear(t_pos *pos, int freee)
-{
+void	ft_posclear(t_pos *pos, int freee) {
 	while (*pos->size != 0)
 		ft_lstdelone(pos->start, freee);
-	if (freee == 1)
-	{
+	if (freee == 1) {
 		free(pos->size);
 		free(pos);
 	}

@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-char	*ft_unsplit(char **tab, char *charset, t_pos *free)
-{
+char	*ft_unsplit(char **tab, char *charset, t_pos *free) {
 	int		i;
 	char	*str;
 
@@ -21,14 +20,12 @@ char	*ft_unsplit(char **tab, char *charset, t_pos *free)
 	str = ft_strdup("", free);
 	if (str == 0)
 		return (0);
-	while (tab[i])
-	{
+	while (tab[i]) {
 		str = ft_strjoin(str, tab[i], free);
 		if (str == 0)
 			return (0);
 		i++;
-		if (tab[i] && charset != 0)
-		{
+		if (tab[i] && charset != 0) {
 			str = ft_strjoin(str, charset, free);
 			if (str == 0)
 				return (0);

@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
+void	*ft_memmove(void *dest, const void *src, size_t n) {
 	char	*source;
 	char	*destination;
 
 	source = (char *)src;
 	destination = (char *)dest;
-	if (src < dest && src + n >= dest)
-	{
+	if (src < dest && src + n >= dest) {
 		while (n--)
 			destination[n] = source[n];
 		return (dest);

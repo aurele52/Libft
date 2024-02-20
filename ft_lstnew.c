@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-t_list	*ft_lstnew(void *content, t_pos *pos, t_pos *free)
-{
+t_list	*ft_lstnew(void *content, t_pos *pos, t_pos *free) {
 	t_list	*liste;
 
 	liste = ft_malloc(sizeof(*liste), free);
@@ -22,15 +21,13 @@ t_list	*ft_lstnew(void *content, t_pos *pos, t_pos *free)
 	liste->content = content;
 	liste->pos = pos;
 	*liste->pos->size = *liste->pos->size + 1;
-	if (pos->end == 0 || pos->start == 0)
-	{
+	if (pos->end == 0 || pos->start == 0) {
 		liste->next = liste;
 		liste->back = liste;
 		pos->start = liste;
 		pos->end = liste;
 	}
-	else
-	{
+	else {
 		liste->next = pos->start;
 		liste->back = pos->end;
 		pos->start->back = liste;

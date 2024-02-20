@@ -10,17 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	*ft_malloc(int size, t_pos *free)
-{
+void	*ft_malloc(int size, t_pos *free) {
 	void	*new;
 
 	new = malloc(size);
 	if (new == 0)
 		return (0);
-	if (free != 0)
-	{
+	if (free != 0) {
 		free->end = ft_lstnew(new, free, 0);
 		if (free->end == 0)
 			return (0);

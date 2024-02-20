@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int character)
-{
+int	ft_isalnum(int character) {
 	if ((character >= 'a' && character <= 'z')
 		|| (character >= 'A' && character <= 'Z')
 		|| (character >= '0' && character <= '9'))

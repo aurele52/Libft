@@ -50,7 +50,6 @@ SRC =	ft_atoi.c \
 		ft_strjoin.c \
 		ft_strlcat.c \
 		ft_strlcpy.c \
-		ft_strcmp.c \
 		ft_strlen.c \
 		ft_strmapi.c \
 		ft_strncmp.c \
@@ -70,7 +69,6 @@ SRC =	ft_atoi.c \
 		get_next_line.c \
 		ft_strstr.c \
 		get_next_line_utils.c \
-		ft_voidtoint.c \
 		ft_setintzerovaria.c \
 		ft_unsplit.c \
 		ft_malloc.c \

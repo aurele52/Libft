@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	*ft_mallocint(int i, t_pos *free)
-{
+void	*ft_mallocint(int i, t_pos *free) {
 	int	*ret;
 
 	ret = ft_malloc(sizeof(ret), free);

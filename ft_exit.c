@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-void	ft_exit(t_pos *garbage, char *str)
-{
+void	ft_exit(t_pos *garbage, char *str) {
 	if (str)
 		write(1, str, ft_strlen(str));
 	if (garbage != 0)

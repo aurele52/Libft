@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-int	ft_strstr(const char *big, const char *little)
-{
+int	ft_strstr(const char *big, const char *little) {
 	size_t	i;
 	size_t	j;
 
@@ -21,8 +20,7 @@ int	ft_strstr(const char *big, const char *little)
 	j = 0;
 	if (little == 0 || big == 0)
 		return (-1);
-	while (big[i])
-	{
+	while (big[i]) {
 		j = 0;
 		while (little[j] == big[i + j])
 		{

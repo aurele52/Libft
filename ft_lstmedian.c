@@ -10,21 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-t_list	*ft_lstmedian(t_pos *pos)
-{
+t_list	*ft_lstmedian(t_pos *pos) {
 	t_list	*medianpot;
 	t_list	*mem;
 	int		nbr;
 
 	medianpot = pos->start;
-	while (1)
-	{
+	while (1) {
 		nbr = 0;
 		mem = pos->start;
-		while (mem != pos->end && nbr < *pos->size / 2 + 1)
-		{
+		while (mem != pos->end && nbr < *pos->size / 2 + 1) {
 			if (ft_voidtoint(mem->content) > ft_voidtoint(medianpot->content))
 				nbr++;
 			mem = mem->next;

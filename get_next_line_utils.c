@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "include/libft.h"
 
-int	ft_strlengnl(char *str)
-{
+int	ft_strlengnl(char *str) {
 	int	i;
 
 	i = 0;
@@ -22,8 +21,7 @@ int	ft_strlengnl(char *str)
 	return (i);
 }
 
-int	ft_atoignl(const char *str)
-{
+int	ft_atoignl(const char *str) {
 	int	i;
 	int	res;
 
@@ -31,8 +29,7 @@ int	ft_atoignl(const char *str)
 	res = 0;
 	if (str[0] == '0')
 		return (0);
-	while (str[i] <= '9' && str[i] >= '0' && str[i])
-	{
+	while (str[i] <= '9' && str[i] >= '0' && str[i]) {
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
