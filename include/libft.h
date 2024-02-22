@@ -36,6 +36,7 @@ typedef struct s_list
 	struct s_pos	*pos;
 }	t_list;
 
+int		ft_strcmp(char *s1, char *s2);
 int		**ft_splitint(char *c, t_pos *free);
 void	ft_exit(t_pos *garbage, char *str);
 int		ft_abs(int a);
