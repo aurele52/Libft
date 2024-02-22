@@ -10,26 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-
-CC = gcc
-
-FLAGS = -g -Wall -Werror -Wextra -MMD
-
-RM = rm -rf
-
-INC = include/libft.h
-
--include ${DOBJ}
-
-.c.o:
-			$(CC) $(FLAGS) -I include -c $< -o $(<:.c=.o)
-
-AR = ar -crs
-
-SRC_DIR = src/
-SRC = $(addprefix $(SRC_DIR),$(FILE))
-
 FILE =	ft_atoi.c \
 		ft_splitint.c \
 		ft_exit.c \
@@ -87,14 +67,36 @@ FILE =	ft_atoi.c \
 		ft_mallocint.c \
 		ft_lstiter.c 
 
+SRC_DIR = src/
+
+SRC = $(addprefix $(SRC_DIR),$(FILE))
+
 OBJ = $(SRC:.c=.o)
 
 DOBJ		=	${SRC:.c=.d}
 
-$(NAME):	$(OBJ) $(INC)
-		$(AR) $(NAME) $(OBJ)
+NAME = libft.a
+
+CC = gcc
+
+FLAGS = -g -Wall -Werror -Wextra -MMD
+
+RM = rm -rf
+
+INC = include/libft.h
 
 all: $(NAME)
+
+-include ${DOBJ}
+
+.c.o:
+			$(CC) $(FLAGS) -I include -c $< -o $(<:.c=.o)
+
+AR = ar -crs
+
+
+$(NAME):	$(OBJ) $(INC)
+		$(AR) $(NAME) $(OBJ)
 
 clean:
 		${RM} $(OBJ) ${DOBJ} ${OBJB} ${DOBJB}
