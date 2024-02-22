@@ -14,14 +14,20 @@ NAME = libft.a
 
 CC = gcc
 
-FLAG = -Wall -Werror -Wextra -g3
+FLAGS = -g -Wall -Werror -Wextra -MMD
 
 RM = rm -rf
 
+INC = include/libft.h
+
+-include ${DOBJ}
+
+.c.o:
+			$(CC) $(FLAGS) -I include -c $< -o $(<:.c=.o)
+
+AR = ar -crs
+
 SRC_DIR = src/
-
-OBJ_DIR = src/
-
 SRC = $(addprefix $(SRC_DIR),$(FILE))
 
 FILE =	ft_atoi.c \
@@ -83,12 +89,7 @@ FILE =	ft_atoi.c \
 
 OBJ = $(SRC:.c=.o)
 
-AR = ar -crs
-
-INC = include/libft.h
-
-.c.o:
-	$(CC) $(FLAG) -I include -c $< -o $(<:.c=.o)
+DOBJ		=	${SRC:.c=.d}
 
 $(NAME):	$(OBJ) $(INC)
 		$(AR) $(NAME) $(OBJ)
@@ -96,19 +97,11 @@ $(NAME):	$(OBJ) $(INC)
 all: $(NAME)
 
 clean:
-		$(RM) $(OBJ)
+		${RM} $(OBJ) ${DOBJ} ${OBJB} ${DOBJB}
 
 fclean: clean
 		$(RM) $(NAME)
 
 re:		fclean all
 
-git:
-	make fclean
-	git add *.c
-	git add Makefile
-	git add include/
-	read S; git commit -m $${S}
-	git push
-
-.PHONY: all clean fclean re git
+.PHONY:		all clean fclean re .c.o
